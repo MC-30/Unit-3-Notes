@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find the Area of a Rectangle</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>Change Contents Notes</h1>
+        <div class="row">
+            <div>
+                <label for="length">Length</label>
+                <input type="text" id="length" name="length" placeholder="Length">
+            </div>
+            <div>
+                <label for="width">Width</label>
+                <input type="text" id="width" name="width" placeholder="Width">
+            </div>
+        </div>
+        <button name="clear">Clear</button>
+        <button name="calculate">Calculate</button>
+        <p class="hidden"></p>
+    </div>
+</div>
+<script>
+    const firstName = document.getElementById('first');
+    const lastName = document.getElementById('last');
+    const full = document.querySelector('p');
+    const clearButton = document.querySelector('[name="clear"]');
+
+    length.addEventListener('change', function(e){
+        let length = length.value;
+        let width = width.value;
+        let area = `${length} * ${width}.`;
+        if (area.length>1){
+            full.classList.remove("hidden")
+        } else {
+            full.classList.add("hidden")
+        }
+        full.textContent = `Hello ${fullName}!`;
+    });
+
+    width.addEventListener('change', function(e){
+        let first = firstName.value;
+        let last = lastName.value;
+        let fullName = `Hello ${first} ${last}!`;
+        full.textContent = fullName;
+    });
+
+    clearButton.addEventListener('click', function(e){
+        firstName.value = "";
+        lastName.value = "";
+        full.textContent = "";
+    });
+
+</script>
+</body>
+</html>
