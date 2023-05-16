@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery Items</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>Grocery Items</h1>
+        <div class="row">
+            <div>
+                <label for="item">Item</label>
+                <input type="text" id="item" name="item" placeholder="Enter Item">
+            </div>
+        </div>
+        <button name="addItem">Add Item</button>
+        <div class="displayBox">
+        </div>
+    </div>
+</div>
+<script>
+    const item = document.getElementById('item');
+    const items = document.querySelector('.displayBox');
+    const Button = document.querySelector('[item="addItem"]');
+
+
+    Button.addEventListener('click', function(e){
+
+
+        const items = document.createElement('h3');
+        item.innerHTML = `${item.value}`;
+        items.insertAdjacentElement('afterbegin', items);
+
+        item.value = "";
+        items.textContent = "";
+    });
+
+</script>
+</body>
+</html>
