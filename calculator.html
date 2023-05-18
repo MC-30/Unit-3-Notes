@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>Calculator</h1>
+        <div class="row">
+            <div>
+                <label for="num1">Number</label>
+                <input type="text" id="num1" name="num1" placeholder="Enter Number">
+            </div>
+            <div>
+                <label for="symbol">Symbols</label>
+                <select name="symbol" id="symbol">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                </select>
+            </div>
+            <div>
+                <label for="num2">Number</label>
+                <input type="text" id="num2" name="num2" placeholder="Enter Number">
+            </div>
+        </div>
+        <button name="calculate">Calculate</button>
+        <div class="displayBox">
+        </div>
+    </div>
+</div>
+<script>
+    const num1 = document.getElementById('num1');
+    const num2 = document.getElementById('num2');
+    const names = document.querySelector('.displayBox');
+    const Button = document.querySelector('[name="sayHello"]');
+
+
+    Button.addEventListener('click', function(e){
+
+
+        const name = document.createElement('h3');
+        name.innerHTML = `${num1.value}  ${num2.value}`;
+        names.insertAdjacentElement('afterbegin', name);
+
+        num1.value = "";
+        num2.value = "";
+
+    });
+
+</script>
+</body>
+</html>
